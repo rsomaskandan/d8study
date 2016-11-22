@@ -1,0 +1,4 @@
+day3:
+  title: 'Day 3 Config Form'
+  route_name: day3
+  parent: system.admin_content

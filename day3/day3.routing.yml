@@ -1,0 +1,7 @@
+day3:
+  path: '/d8study/day3/config'
+  defaults:
+    _form: '\Drupal\day3\Form\Day3Form'
+    title: 'Day 3 Config Form'
+  requirements:
+    _permission: 'access day3form'

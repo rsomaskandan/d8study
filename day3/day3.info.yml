@@ -1,0 +1,6 @@
+name: 'Day 3 Config Form'
+type: module
+description: 'Day 3 Config Form'
+version: 8.x
+core: 8.x
+package: d8study
