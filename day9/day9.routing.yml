@@ -1,0 +1,14 @@
+# Machine Name of Route
+# The actual path on the browser
+# Defaults: Controller: the controller file with the actual code....always under src/controller
+# Title of the page
+# Always need requirements - always true condition if there's no restriction
+
+
+day9_settings:
+  path: '/day9/world'
+  defaults:
+    _controller: '\Drupal\day9\Controller\Day9Controller::myMethod'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'

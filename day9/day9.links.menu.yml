@@ -1,0 +1,9 @@
+# First is the machine name of the menu link
+# Followed by title of menu link
+# Followed by the route machine name it links to from *.routing.yml
+# Parent menu item
+
+day9_settings:
+  title: 'Day 9 Page'
+  route_name: day9_settings
+  parent: system.admin_content

@@ -1,0 +1,9 @@
+# add all css & js libraries here. Only then they will be recognized
+
+day9:
+  version: 8.1.0
+  css:
+    theme:
+      css/day9.css: {}
+  js:
+    js/day9.js: {}
