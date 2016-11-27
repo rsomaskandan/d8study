@@ -1,0 +1,10 @@
+name: 'Day 4'
+type: module
+description: 'Day 4 Migrate 101'
+version: 8.x
+core: 8.x
+package: d8study
+dependencies:
+  - migrate_source_csv
+  - migrate_plus
+  - migrate_tools

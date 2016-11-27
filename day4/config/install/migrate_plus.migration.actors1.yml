@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - day4
+id: actors1
+label: Actors
+migration_group: day_4
+migration_tags:
+  - CSV
+source:
+  plugin: csv
+  path: public://migration/Movie_actors.csv
+  header_row_count: 1
+  keys:
+    - id
+  column_names:
+    0:
+      id: ID
+    1:
+      name: Name
+process:
+  type:
+    plugin: default_value
+    default_value: actor
+  title: name
+destination:
+  plugin: entity:node

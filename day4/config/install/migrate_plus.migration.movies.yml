@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    # List here the name of the module that provided this migration if you want
+    # this config to be removed when that module is uninstalled.
+    module:
+      - day4
+# Defining the id, label and the group it belongs to. Similar migrations can be grouped together.
+id: movies
+label: Movies
+migration_group: day_4
+migration_tags:
+  - CSV
+# Defining the CSV source and its various columns
+source:
+  plugin: csv
+  path: public://migration/Movie.csv
+  header_row_count: 1
+  keys: 
+    - id
+  column_names:
+    0:
+      id: Identifier
+    1:
+      title: Title
+    2:
+      plot: Plot
+    3:
+      actors: Actors
+    4:
+      genre: Genre
+#Processing the data. Each field's data can undergo several processing plugin to get the desired results
+process:
+  type:
+    plugin: default_value
+    default_value: movie
+  title: title
+  body: plot
+  field_actor:
+    -
+      plugin: explode
+      source: actors
+      delimiter: ','
+    -
+      plugin: migration
+      migration: actors1
+  field_genre:
+    -
+      plugin: explode
+      source: genre
+      delimiter: '|'
+    -
+      plugin: entity_generate
+# Since this migration is for creating new 'movie' content type, set the plugin to node entity
+destination:
+  plugin: entity:node
+migration_dependencies:
+  required:
+    - actors1
